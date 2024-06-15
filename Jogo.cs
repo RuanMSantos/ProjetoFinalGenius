@@ -1,0 +1,7 @@
+namespace ProjetoFinalGenius
+{
+    class Jogo
+    {
+        
+    }
+}

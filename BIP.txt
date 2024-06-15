@@ -1,0 +1,10 @@
+==> Demonstração de bips <==
+
+r => vermelho
+g => verde
+b => azul
+y => amarelo
+
+...Demonstrando BIP...
+
+Você que testar novamente? (s/n)
