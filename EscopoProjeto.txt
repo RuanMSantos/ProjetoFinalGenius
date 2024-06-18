@@ -57,8 +57,13 @@ Dificuldade selecionada -> 'X'  - 8 botões -
 ...
 As cores selecionaveis são: vermelho[r], verde[g], azul[b] e amarelo[y].
 
-1 - Demonstrar bip
-2 - Jogar rodada
+                   ----
+Está pronto(s/n)? |    |
+                   ----
+Tem certeza(s/n)? |    |
+                   ----
+Ok... Boa sorte!  |    |
+                   ----
 
 ...
 Rodada 'Y' | Rodadas restantes 'Y--'

@@ -29,6 +29,9 @@
             while (dificuldadeSelecionada < 1 || dificuldadeSelecionada > 4);
 
             ui.ExibeDificuldadeEscolhida(dificuldadeSelecionada);
+            ui.ExibeCoresSelecionaveis();
+
+            ui.ExibePontoDePartida();
         }
     }
 }

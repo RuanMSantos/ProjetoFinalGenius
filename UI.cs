@@ -104,6 +104,69 @@ namespace ProjetoFinalGenius
             
         }
 
+        public void ExibeCoresSelecionaveis()
+        {
+            Console.Write("\nAs cores selecionaveis são: ");
+            Thread.Sleep(2000);
+           
+
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("vermelho[r], ");
+            Console.Beep(132, 3000);
+            Thread.Sleep(2000);
+           
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("verde[g], ");
+            Console.Beep(165, 1500);
+            Thread.Sleep(2000);
+           
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("azul[b] ");
+            Console.Beep(198, 1500);
+            Thread.Sleep(2000);
+           
+            Thread.Sleep(500);
+            Console.ResetColor();
+            Console.Write("e ");
+           
+            Thread.Sleep(500);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("amarelo[y].");
+            Console.ResetColor();
+            Console.Beep(247, 1500);
+            Thread.Sleep(2000);
+        }
+
+        public void ExibePontoDePartida()
+        {
+            string prontidao1;
+            do
+            {
+            Thread.Sleep(500);
+            Console.WriteLine("\n                   ----");
+            Console.Write("Está pronto(s/n)? |    | ");
+            prontidao1 = Console.ReadLine()!.Trim().ToLower();
+            Console.WriteLine("                   ----");
+            }
+            while(prontidao1 != "s");
+
+            string prontidao2;
+            do {
+            Thread.Sleep(500);
+            Console.Write("Tem certeza(s/n)? |    | ");
+            prontidao2 = Console.ReadLine()!.Trim().ToLower();
+            Console.WriteLine("                   ----");
+            }
+            while(prontidao2 != "s");
+
+            Thread.Sleep(500);
+            Console.WriteLine("Ok... Boa sorte!  |    |");
+            Console.WriteLine("                   ----");
+        }
+
         public void ExibeDerrota()
         {
             Console.WriteLine(" ##   ##   #####     ####   #######           ######   #######  ######   #####    #######  ##   ##");
