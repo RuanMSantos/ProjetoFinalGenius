@@ -4,12 +4,13 @@ namespace ProjetoFinalGenius
 {
     class UI
     {
-        public void ExibirTitulo()
+        public void ExibeTitulo()
         {
+            Console.Clear();
             Console.WriteLine(FiggleFonts.Big.Render("Genius"));
         }
     
-        public void ExibirGenius()
+        public void ExibeGenius()
         {
             Console.WriteLine("                                    ::mmmmMMMM++++++@@@@@@MM                                        ");
             Console.WriteLine("                            ..++++++MM--::::::::::::++::++++++++@@@@                                ");
@@ -48,9 +49,12 @@ namespace ProjetoFinalGenius
             Console.WriteLine("                            MM@@##################################@@MM####--                        ");
             Console.WriteLine("                                  MM++##############################mm                              ");
             Console.WriteLine("                                          MMmmmmmmmmmmMMMMMMMM                                      ");
+            Console.WriteLine("\nPressione uma tecla para continuar...");
+            Console.ReadKey();
+            Console.Clear();
         }
     
-        public void ExibirDificuldades()
+        public void ExibeDificuldades()
         {
             Console.WriteLine("--- Selecione o nível de dificuldade ---\n");
             Console.WriteLine("Dificuldade 1 ->  8 jogadas");
@@ -60,12 +64,31 @@ namespace ProjetoFinalGenius
 
         }
     
-        public void ExibirDificuldadeEscolhida(int dificuldadeSelecionada)
+        public void ExibeDificuldadeEscolhida(int dificuldadeSelecionada)
         {
-            // int dificuldadeSelecionada = x;
-            Console.Write($"Dificuldade selecionada -> {dificuldadeSelecionada}");
-            // switch ()
-            Console.WriteLine($"-  botões - ");
+            
+                dificuldadeSelecionada = dificuldadeSelecionada;
+                Console.Write($"Dificuldade selecionada -> {dificuldadeSelecionada} ");
+            
+                switch (dificuldadeSelecionada)
+                {
+                case 1: Console.WriteLine($"- 8 rodadas - ");
+                break;
+                case 2: Console.WriteLine($"- 14 rodadas - ");
+                break;
+                case 3: Console.WriteLine($"- 20 rodadas - ");
+                break;
+                case 4: Console.WriteLine($"- 31 rodadas - ");
+                break;
+                default: 
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nErro, dificuldade não encontrada");
+                Console.ResetColor();
+                break;
+                }
+
+            
+            
         }
 
         public void ExibeDerrota()
