@@ -56,6 +56,7 @@ namespace ProjetoFinalGenius
     
         public void ExibeDificuldades()
         {
+            Thread.Sleep(500);
             Console.WriteLine("--- Selecione o nível de dificuldade ---\n");
             Console.WriteLine("Dificuldade 1 ->  8 jogadas");
             Console.WriteLine("Dificuldade 2 -> 14 jogadas");
@@ -66,19 +67,31 @@ namespace ProjetoFinalGenius
     
         public void ExibeDificuldadeEscolhida(int dificuldadeSelecionada)
         {
-            
+                Thread.Sleep(500);
                 dificuldadeSelecionada = dificuldadeSelecionada;
-                Console.Write($"Dificuldade selecionada -> {dificuldadeSelecionada} ");
+                Console.Write($"\nDificuldade selecionada -> {dificuldadeSelecionada} ");
             
                 switch (dificuldadeSelecionada)
                 {
-                case 1: Console.WriteLine($"- 8 rodadas - ");
+                case 1: 
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine($"- 8 rodadas - ");
+                Console.ResetColor();
                 break;
-                case 2: Console.WriteLine($"- 14 rodadas - ");
+                case 2: 
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine($"- 14 rodadas - ");
+                Console.ResetColor();
                 break;
-                case 3: Console.WriteLine($"- 20 rodadas - ");
+                case 3: 
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine($"- 20 rodadas - ");
+                Console.ResetColor();
                 break;
-                case 4: Console.WriteLine($"- 31 rodadas - ");
+                case 4: 
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine($"- 31 rodadas - ");
+                Console.ResetColor();
                 break;
                 default: 
                 Console.ForegroundColor = ConsoleColor.Red;

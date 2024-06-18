@@ -8,18 +8,20 @@
 
             ui.ExibeTitulo();
             ui.ExibeGenius();
-            ui.ExibeDificuldades();
 
             int dificuldadeSelecionada;
             do
             {
+                ui.ExibeDificuldades();
                 Console.Write("\nDigite a dificuldade escolhida: ");
                 dificuldadeSelecionada = Convert.ToInt32(Console.ReadLine());
                 
                 if (dificuldadeSelecionada < 1 || dificuldadeSelecionada > 4)
                 {
-                    Console.WriteLine("\nDificuldade inesistente");
-                    Console.WriteLine("\nPressione uma tecla para tentar novamente");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nDificuldade inexistente");
+                    Console.ResetColor();
+                    Console.WriteLine("\nPressione uma tecla para tentar novamente...");
                     Console.ReadKey();
                     Console.Clear();
                 }
