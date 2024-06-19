@@ -31,7 +31,7 @@
             ui.ExibeDificuldadeEscolhida(dificuldadeSelecionada);
             ui.ExibeCoresSelecionaveis();
 
-            ui.ExibePontoDePartida();
+            ui.ExibePontoDePartida(0, 0, 0);
         }
     }
 }
