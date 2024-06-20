@@ -4,6 +4,24 @@ namespace ProjetoFinalGenius
     {
         public string Nome { get; set; } = default!;
 
-        public int Beep { get; set; }
+        public void Vermelho()
+        {
+            this.Nome = "r";
+        }
+    
+        public void Verde()
+        {
+            this.Nome = "g";
+        }
+
+        public void Azul()
+        {
+            this.Nome = "b";
+        }
+
+        public void Amarelo()
+        {
+            this.Nome = "y";
+        }
     }
 }

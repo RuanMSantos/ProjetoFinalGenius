@@ -54,17 +54,87 @@
             Console.WriteLine("Ok... Boa sorte");
             Thread.Sleep(500);
 
-            Jogo jogo = new Jogo();
-
-            int limiteDeRodadas;
-            // jogo.LimiteDeRodadas(dificuldadeSelecionada,);
+            bool validacaoDificuldadeSelecionada =
+            dificuldadeSelecionada <= 1
+            || dificuldadeSelecionada >= 4;
             
-            // for (int i = 0; i <= limiteDeRodadas; i++)
-            // {}
-            ui.ExibePontoDePartida();
-        
-            Console.WriteLine("\nRodada iniciada!");
+            int limiteDeRodadasParcial = 0;
+            if (validacaoDificuldadeSelecionada)
+            {
+                if (dificuldadeSelecionada == 1)
+                {
+                    limiteDeRodadasParcial = 8;
+                }
+                
+                if (dificuldadeSelecionada == 2)
+                {
+                    limiteDeRodadasParcial = 14;
+                }
+                
+                if (dificuldadeSelecionada == 3)
+                {
+                   limiteDeRodadasParcial = 20;
+                }
+                
+                if (dificuldadeSelecionada == 4)
+                {
+                    limiteDeRodadasParcial = 31;
+                }
+            }
+                int limiteDeRodadas = limiteDeRodadasParcial;
 
+                Jogo jogo = new Jogo();
+
+                Cores corGerada = new Cores();
+
+                for (int i = 0; i < limiteDeRodadas; i++)
+                {
+                    ui.ExibePontoDePartida();
+                    
+                    Console.WriteLine("\nRodada iniciada!");
+
+                    jogo.PlacarJogo(i, limiteDeRodadas);
+
+                    int[] numeroGerado = new int[limiteDeRodadas];
+                    Random gerador = new Random();
+                    string[] letraDaCor = {"r", "g", "b", "y"};
+                    List<string> sequenciaCores = new List<string>();
+
+                    for (int i1 = 0; i1 < limiteDeRodadas; i1++)
+                    {
+                        numeroGerado[i1] = gerador.Next(1, 5);
+                    
+                        if (numeroGerado[i1] == 1)
+                        {
+                            corGerada.Vermelho();
+                        }
+                        if (numeroGerado[i1] == 2)
+                        {
+                            corGerada.Verde();
+                        }
+                        if (numeroGerado[i1] == 3)
+                        {
+                            corGerada.Azul();
+                        }
+                        if (numeroGerado[i1] == 4)
+                        {
+                            corGerada.Amarelo();
+                        }
+
+                        // for (int i2 = 0; )
+                        // {
+                        //     sequenciaCores.Add(corGerada.Nome);
+                        // }
+                    }
+
+
+
+
+
+                }
+            
+
+            
         }
     }
 }
