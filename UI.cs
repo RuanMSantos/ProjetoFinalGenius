@@ -58,10 +58,10 @@ namespace ProjetoFinalGenius
         {
             Thread.Sleep(500);
             Console.WriteLine("--- Selecione o nível de dificuldade ---\n");
-            Console.WriteLine("Dificuldade 1 ->  8 jogadas");
-            Console.WriteLine("Dificuldade 2 -> 14 jogadas");
-            Console.WriteLine("Dificuldade 3 -> 20 jogadas");
-            Console.WriteLine("Dificuldade 4 -> 31 jogadas");
+            Console.WriteLine("Dificuldade 1 ->  8 rodadas");
+            Console.WriteLine("Dificuldade 2 -> 14 rodadas");
+            Console.WriteLine("Dificuldade 3 -> 20 rodadas");
+            Console.WriteLine("Dificuldade 4 -> 31 rodadas");
 
         }
     
@@ -140,111 +140,79 @@ namespace ProjetoFinalGenius
             Thread.Sleep(2000);
         }
 
-        public void ExibePontoDePartida(int vermelho, int amarelo, int verde)
+        public void ExibePontoDePartida()
         {
-            string prontidao1;
-            if (vermelho == 1)
-            {
-            Console.Clear();
-            Console.WriteLine("\n                   ----");
-            Console.WriteLine("Está pronto(s/n)? |    |");
-            Console.WriteLine("                   ----");
-            Console.WriteLine("Tem certeza(s/n)? |    |");
-            Console.WriteLine("                   ----");
-            Console.WriteLine("Ok... Boa sorte!  |    |");
-            Console.WriteLine("                   ----");
 
+            Thread.Sleep(500);
             Console.Clear();
-            Console.WriteLine("\n                   ----");
-            Console.Write("Está pronto(s/n)? | ");
+            Console.WriteLine(" ----");
+            Console.WriteLine("|    |");
+            Console.WriteLine(" ----");
+            Console.WriteLine("|    |");
+            Console.WriteLine(" ----");
+            Console.WriteLine("|    |");
+            Console.WriteLine(" ----");
+
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Write("  ");
             Console.ResetColor();
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            Console.Write("Tem certeza(s/n)? | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.Write("  ");
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            Console.Write("Ok... Boa sorte!  | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.Write("  ");
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            
+            Console.WriteLine(" ----");
+           
+            Thread.Sleep(1000);
             Console.Clear();
-            Console.WriteLine("\n                   ----");
-            Console.Write("Está pronto(s/n)? | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Write("  ");
             Console.ResetColor();
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            Console.Write("Tem certeza(s/n)? | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.Write("  ");
             Console.ResetColor();
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            Console.Write("Ok... Boa sorte!  | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.Write("  ");
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            
+            Console.WriteLine(" ----");
+           
+            Thread.Sleep(1000);
             Console.Clear();
-            Console.WriteLine("\n                   ----");
-            Console.Write("Está pronto(s/n)? | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Write("  ");
             Console.ResetColor();
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            Console.Write("Tem certeza(s/n)? | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.Write("  ");
             Console.ResetColor();
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-            Console.Write("Ok... Boa sorte!  | ");
+            Console.WriteLine(" ----");
+            Console.Write("| ");
             Console.BackgroundColor = ConsoleColor.Green;
             Console.Write("  ");
             Console.ResetColor();
             Console.WriteLine(" |");
-            Console.WriteLine("                   ----");
-
+            Console.WriteLine(" ----");
             
-            }
-            
-            else if (vermelho == 0)
-            {
-            
-            Console.Clear();
-            Thread.Sleep(500);
-            Console.WriteLine("\n                   ----");
-            Console.Write("Está pronto(s/n)? |    | ");
-            prontidao1 = Console.ReadLine()!.Trim().ToLower();
-            Console.WriteLine("                   ----");
-
-            if (prontidao1 == "n")
-            {
-                return;
-            }
-            
-            string prontidao2;
-        
-            Thread.Sleep(500);
-            Console.Write("Tem certeza(s/n)? |    | ");
-            prontidao2 = Console.ReadLine()!.Trim().ToLower();
-            Console.WriteLine("                   ----");
-
-            if (prontidao2 == "n")
-            {
-                 return;
-            }
-
-            Thread.Sleep(500);
-            Console.WriteLine("Ok... Boa sorte!  |    |");
-            Console.WriteLine("                   ----");
-            }
         }
 
         public void ExibeDerrota()

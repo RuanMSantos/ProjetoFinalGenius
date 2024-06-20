@@ -29,9 +29,42 @@
             while (dificuldadeSelecionada < 1 || dificuldadeSelecionada > 4);
 
             ui.ExibeDificuldadeEscolhida(dificuldadeSelecionada);
-            ui.ExibeCoresSelecionaveis();
+            // ui.ExibeCoresSelecionaveis();
 
-            ui.ExibePontoDePartida(0, 0, 0);
+            Thread.Sleep(500);
+            Console.Write("\nEstá pronto(s/n)? ");
+            string prontidao1 = Console.ReadLine()!.Trim().ToLower();
+
+            if (prontidao1 != "s")
+            {
+                return;
+            }
+
+            Thread.Sleep(500);
+            Console.Write("Tem certeza(s/n)? ");
+            string prontidao2 = Console.ReadLine()!.Trim().ToLower();
+
+            
+            if (prontidao2 != "s")
+            {
+                return;
+            }
+            
+            Thread.Sleep(500);
+            Console.WriteLine("Ok... Boa sorte");
+            Thread.Sleep(500);
+
+            Jogo jogo = new Jogo();
+
+            int limiteDeRodadas;
+            // jogo.LimiteDeRodadas(dificuldadeSelecionada,);
+            
+            // for (int i = 0; i <= limiteDeRodadas; i++)
+            // {}
+            ui.ExibePontoDePartida();
+        
+            Console.WriteLine("\nRodada iniciada!");
+
         }
     }
 }

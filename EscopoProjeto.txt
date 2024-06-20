@@ -65,10 +65,10 @@ Tem certeza(s/n)? |    |
 Ok... Boa sorte!  |    |
                    ----
 
+Rodada iniciada!
+
 ...
 Rodada 'Y' | Rodadas restantes 'Y--'
-
-Jogando em... 1, 2, 3.
 
 ||||||||||||||
 
