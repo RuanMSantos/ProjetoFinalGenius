@@ -1,4 +1,5 @@
 using Figgle;
+#pragma warning disable CA1416
 
 namespace ProjetoFinalGenius
 {

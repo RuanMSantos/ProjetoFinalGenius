@@ -1,4 +1,5 @@
-﻿namespace ProjetoFinalGenius
+﻿
+namespace ProjetoFinalGenius
 {
     class Program
     {
@@ -95,46 +96,72 @@
 
                     jogo.PlacarJogo(i, limiteDeRodadas);
 
-                    int[] numeroGerado = new int[limiteDeRodadas];
-                    Random gerador = new Random();
-                    string[] letraDaCor = {"r", "g", "b", "y"};
                     List<string> sequenciaCores = new List<string>();
-
-                    for (int i1 = 0; i1 < limiteDeRodadas; i1++)
-                    {
-                        numeroGerado[i1] = gerador.Next(1, 5);
+                    Random gerador = new Random();
                     
-                        if (numeroGerado[i1] == 1)
+                    
+                    int numeroGerado = gerador.Next(1, 5);
+
+                        string letraGerada = default!;
+                        if (numeroGerado == 1)
                         {
-                            corGerada.Vermelho();
+                            letraGerada = "r";
                         }
-                        if (numeroGerado[i1] == 2)
+                        if (numeroGerado == 2)
                         {
-                            corGerada.Verde();
+                            letraGerada = "g";
                         }
-                        if (numeroGerado[i1] == 3)
+                        if (numeroGerado == 3)
                         {
-                            corGerada.Azul();
+                            letraGerada = "b";
                         }
-                        if (numeroGerado[i1] == 4)
+                        if (numeroGerado == 4)
                         {
-                            corGerada.Amarelo();
+                            letraGerada = "y";
                         }
+                        
+                    sequenciaCores.Add(letraGerada);
+
+                    foreach (string a in sequenciaCores)
+                    {
+
+                        Console.WriteLine($"{a}");
+                    }
+
+                    // for (int i1 = 0; i1 < limiteDeRodadas; i1++)
+                    // {
+
+                    
+                        // if (numeroGerado[i1] == 1)
+                        // {
+                        //     corGerada.Vermelho();
+                        // }
+                        // if (numeroGerado[i1] == 2)
+                        // {
+                        //     corGerada.Verde();
+                        // }
+                        // if (numeroGerado[i1] == 3)
+                        // {
+                        //     corGerada.Azul();
+                        // }
+                        // if (numeroGerado[i1] == 4)
+                        // {
+                        //     corGerada.Amarelo();
+                        // }
 
                         // for (int i2 = 0; )
                         // {
                         //     sequenciaCores.Add(corGerada.Nome);
                         // }
-                    }
-
-
-
-
-
                 }
+
+
+
+
+
+        }
             
 
             
-        }
     }
 }
