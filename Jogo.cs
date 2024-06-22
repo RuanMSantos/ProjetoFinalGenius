@@ -6,7 +6,7 @@ namespace ProjetoFinalGenius
         {
             int rodada = contador + 1;
             int rodadasRestantes = rodada - limiteDeRodadas;
-            Console.WriteLine($"Rodada {rodada} | Rodadas restantes {Math.Abs(rodadasRestantes)}");
+            Console.WriteLine($"\nRodada {rodada} | Rodadas restantes {Math.Abs(rodadasRestantes)}");
         }
     
 

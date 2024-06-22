@@ -108,37 +108,39 @@ namespace ProjetoFinalGenius
         public void ExibeCoresSelecionaveis()
         {
             Console.Write("\nAs cores selecionaveis são: ");
-            Thread.Sleep(2000);
-           
-
-            Thread.Sleep(500);
+            
+            Console.Beep(1000, 500);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("vermelho[r], ");
-            Console.Beep(132, 3000);
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
+            
            
-            Thread.Sleep(500);
+            
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("verde[g], ");
-            Console.Beep(165, 1500);
-            Thread.Sleep(2000);
+            Console.Beep(2000, 500);
+            Thread.Sleep(1000);
            
-            Thread.Sleep(500);
+           
+            
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("azul[b] ");
-            Console.Beep(198, 1500);
-            Thread.Sleep(2000);
+            Console.Beep(3000, 250);
+            Thread.Sleep(500);
+            
            
             Thread.Sleep(500);
             Console.ResetColor();
             Console.Write("e ");
-           
             Thread.Sleep(500);
+           
+            
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("amarelo[y].");
+            Console.Write("amarelo[y].\n");
             Console.ResetColor();
-            Console.Beep(247, 1500);
-            Thread.Sleep(2000);
+            Console.Beep(4000, 250);
+            Thread.Sleep(500);
+            
         }
 
         public void ExibePontoDePartida()
@@ -227,7 +229,7 @@ namespace ProjetoFinalGenius
             Console.WriteLine("    #      #####     ####   #######           ####     #######  #### ##  #####    #######   ##### ");
         }
 
-        public void ExibeVitória()
+        public void ExibeVitoria()
         {
             Console.WriteLine(" ##   ##   #####     ####   #######             ####     ##     ##   ##  ##   ##   #####   ##   ##");
             Console.WriteLine(" ##   ##  ##   ##   ##  ##   ##   #            ##  ##   ####    ###  ##  ##   ##  ##   ##  ##   ##");

@@ -1,10 +1,16 @@
-﻿
+﻿#pragma warning disable CA1416
+
 namespace ProjetoFinalGenius
 {
     class Program
     {
         static void Main(string[] args)
         {
+            List<string> coresSelecionaveis = new List<string>(){"r","g", "b", "y"};
+            List<string> sequenciaCores = new List<string>();
+            List<string> sequenciaDigitada = new List<string>();
+            int contadorRodada = 0;
+
             UI ui = new UI();
 
             ui.ExibeTitulo();
@@ -30,7 +36,7 @@ namespace ProjetoFinalGenius
             while (dificuldadeSelecionada < 1 || dificuldadeSelecionada > 4);
 
             ui.ExibeDificuldadeEscolhida(dificuldadeSelecionada);
-            // ui.ExibeCoresSelecionaveis();
+            ui.ExibeCoresSelecionaveis();
 
             Thread.Sleep(500);
             Console.Write("\nEstá pronto(s/n)? ");
@@ -82,86 +88,128 @@ namespace ProjetoFinalGenius
                     limiteDeRodadasParcial = 31;
                 }
             }
-                int limiteDeRodadas = limiteDeRodadasParcial;
+            
+            int limiteDeRodadas = limiteDeRodadasParcial;
 
-                Jogo jogo = new Jogo();
+            Jogo jogo = new Jogo();
 
-                Cores corGerada = new Cores();
+            ui.ExibePontoDePartida();
+                    
+            Console.WriteLine("\nRodada iniciada!");
 
-                for (int i = 0; i < limiteDeRodadas; i++)
+            int contagem = Contador();
+            jogo.PlacarJogo(contagem, limiteDeRodadas);
+
+            GerarLetraAleatoria(coresSelecionaveis);
+
+            ExibeCorGerada();
+
+            SequenciaDigitada();
+
+            sequenciaDigitada = SequenciaDigitada();
+
+            if (sequenciaCores == sequenciaDigitada && contadorRodada <= limiteDeRodadas)
+            {
+                 ui.ExibePontoDePartida();
+                jogo.PlacarJogo(contagem, limiteDeRodadas);
+                GerarLetraAleatoria(coresSelecionaveis);
+                ExibeCorGerada();
+                SequenciaDigitada();
+            }
+
+            else
+            {
+                ui.ExibeDerrota();
+                return;
+            }
+            
+
+            void GerarLetraAleatoria(List<string> coresSelecionaveis)
+            {
+                Random gerador = new Random();
+                    
+                sequenciaCores.Add(coresSelecionaveis.ElementAt(gerador.Next(0, 4)));
+                    
+            }
+
+            void ExibeCorGerada()
+            {
+                foreach (var item in sequenciaCores)
                 {
-                    ui.ExibePontoDePartida();
-                    
-                    Console.WriteLine("\nRodada iniciada!");
-
-                    jogo.PlacarJogo(i, limiteDeRodadas);
-
-                    List<string> sequenciaCores = new List<string>();
-                    Random gerador = new Random();
-                    
-                    
-                    int numeroGerado = gerador.Next(1, 5);
-
-                        string letraGerada = default!;
-                        if (numeroGerado == 1)
-                        {
-                            letraGerada = "r";
-                        }
-                        if (numeroGerado == 2)
-                        {
-                            letraGerada = "g";
-                        }
-                        if (numeroGerado == 3)
-                        {
-                            letraGerada = "b";
-                        }
-                        if (numeroGerado == 4)
-                        {
-                            letraGerada = "y";
-                        }
-                        
-                    sequenciaCores.Add(letraGerada);
-
-                    foreach (string a in sequenciaCores)
+                    Console.Clear();
+                    if (item == "r")
                     {
-
-                        Console.WriteLine($"{a}");
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("  ");
+                        Console.Beep(1000, 500);
+                        Console.ResetColor();
                     }
-
-                    // for (int i1 = 0; i1 < limiteDeRodadas; i1++)
-                    // {
-
                     
-                        // if (numeroGerado[i1] == 1)
-                        // {
-                        //     corGerada.Vermelho();
-                        // }
-                        // if (numeroGerado[i1] == 2)
-                        // {
-                        //     corGerada.Verde();
-                        // }
-                        // if (numeroGerado[i1] == 3)
-                        // {
-                        //     corGerada.Azul();
-                        // }
-                        // if (numeroGerado[i1] == 4)
-                        // {
-                        //     corGerada.Amarelo();
-                        // }
-
-                        // for (int i2 = 0; )
-                        // {
-                        //     sequenciaCores.Add(corGerada.Nome);
-                        // }
+                    if (item == "g")
+                    {
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.WriteLine("  ");
+                        Console.Beep(2000, 500);
+                        Console.ResetColor();
+                    }
+                    
+                    if (item == "b")
+                    {
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("  ");
+                        Console.Beep(3000, 250);
+                        Console.ResetColor();
+                    }
+                    
+                    if (item == "r")
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("  ");
+                        Console.Beep(4000, 250);
+                        Console.ResetColor();
+                    }
+                    Thread.Sleep(500);
+                    Console.Clear();
+                    }
                 }
 
+            
+            List<string> SequenciaDigitada()
+            {
+                contadorRodada++;
+                sequenciaDigitada.Clear();
+                string digito;
+                    
+                try
+                {
+                    digito = Console.ReadLine()!.Trim().ToLower();
+                }
+                catch
+                {
+                    throw new ArgumentException("Impossível converter em string.");
+                    
+                
+                }
+                    
+                if (digito != "r" || digito != "g" || digito != "b" || digito != "y")
+                {
+                    Environment.Exit(0);
+                }
+                
+            
+                sequenciaDigitada.Add(digito);
+                    
+                
+            
+                return sequenciaDigitada;
+            }
 
-
-
-
+            int Contador()
+            {
+                int contador = 0;
+                return contador;
+            }
         }
-            
-
-            
+             
     }
 }
